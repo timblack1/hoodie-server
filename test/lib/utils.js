@@ -14,9 +14,6 @@ exports.killCouch = function (data_dir, callback) {
 exports.resetFixture = function (dir, callback) {
     var data_dir = path.resolve(dir, 'data');
     rimraf(data_dir, function (err) {
-        if (err) {
-            return callback(err);
-        }
         exports.killCouch(data_dir, callback);
     });
 }
